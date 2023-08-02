@@ -182,6 +182,8 @@ public class PlayerLookController : LookController
 			Color eyeColor = new Color(1f, 0f, 0f, 1f);
 			this.SetMainColor(base.LeftEyeGeo, eyeColor);
 			this.SetMainColor(base.RightEyeGeo, eyeColor);
+   			Color capeColor = new Color(0.4156f, 0.4823f, 0.7686f);
+			this.SetMainColor(base.CapeGeo, capeColor);
 			base.Animator.SetFloat("LimbType", 1f);
 			base.Animator.SetFloat("BoneStructureType", 1f);
 		}
