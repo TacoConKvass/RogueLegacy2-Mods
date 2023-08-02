@@ -170,21 +170,32 @@ public class PlayerLookController : LookController
 			base.MouthGeo.sharedMaterial = LookLibrary.ClownMouthMaterial;
 		}
 
-        //This part was added to change all knights to have Kris' characteristics
+        	//This part was added to change all knights to have Kris' characteristics
+	 	//Color data taken from a screenshot from Deltarune
 		if (charData.ClassType == ClassType.SwordClass)
 		{
+  			//Create Kris' skin color, and aply it to the head mesh
 			Color skinColor = new Color(0.4588f, 0.9843f, 0.9294f);
 			this.SetMainColor(base.HeadGeo, skinColor);
+
+   			//Create Kris' hair color, and apply it to the hair, helmet, and chest hair meshes
+      			//(although I don't know whee the last one is used)
 			Color hairColor = new Color(0.0413f, 0.0413f, 0.2313f);
 			this.SetMainColor(base.HelmetGeo, hairColor);
 			this.SetMainColor(base.HelmetHairGeo, hairColor);
 			this.SetMainColor(base.ChestHairGeo, hairColor);
-			Color eyeColor = new Color(1f, 0f, 0f, 1f);
+
+   			//Create red color, and apply it to the eye meshes
+   			Color eyeColor = new Color(1f, 0f, 0f, 1f);
 			this.SetMainColor(base.LeftEyeGeo, eyeColor);
 			this.SetMainColor(base.RightEyeGeo, eyeColor);
-   			Color capeColor = new Color(0.4156f, 0.4823f, 0.7686f);
+
+      			//Create Kris' cape color, and apply it to the cape mesh
+      			Color capeColor = new Color(0.4156f, 0.4823f, 0.7686f);
 			this.SetMainColor(base.CapeGeo, capeColor);
-			base.Animator.SetFloat("LimbType", 1f);
+
+   			//Make the character have small limbs
+   			base.Animator.SetFloat("LimbType", 1f);
 			base.Animator.SetFloat("BoneStructureType", 1f);
 		}
 		base.GlassesGeo.SetActive(charData.HasGlasses);
