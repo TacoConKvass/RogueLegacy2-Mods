@@ -1,6 +1,7 @@
 # Welcome to Kris, Where Are We? Mod
 Have you ever wanted to play as Kris from Deltarune in Rogue Legacy 2? Now you can!
-Mod requested by: @Gridd from the CDG Discord server
+
+**Mod requested by**: @Gridd from the CDG Discord server
 
 ## This mod contains:
 1. All knights have special characteristics to make them look more like Kris from Deltarune
