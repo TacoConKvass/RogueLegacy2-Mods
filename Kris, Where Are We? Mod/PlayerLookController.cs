@@ -176,11 +176,14 @@ public class PlayerLookController : LookController
 			Color skinColor = new Color(0.4588f, 0.9843f, 0.9294f);
 			this.SetMainColor(base.HeadGeo, skinColor);
 			Color hairColor = new Color(0.0413f, 0.0413f, 0.2313f);
+			this.SetMainColor(base.HelmetGeo, hairColor);
 			this.SetMainColor(base.HelmetHairGeo, hairColor);
 			this.SetMainColor(base.ChestHairGeo, hairColor);
 			Color eyeColor = new Color(1f, 0f, 0f, 1f);
 			this.SetMainColor(base.LeftEyeGeo, eyeColor);
 			this.SetMainColor(base.RightEyeGeo, eyeColor);
+			base.Animator.SetFloat("LimbType", 1f);
+			base.Animator.SetFloat("BoneStructureType", 1f);
 		}
 		base.GlassesGeo.SetActive(charData.HasGlasses);
 	}
