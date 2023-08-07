@@ -15,4 +15,4 @@ Have you ever wanted to play as Kris from Deltarune in Rogue Legacy 2? Now you c
 3. Replace the file with the modded one.
 4. Have fun!
 
-## Changes made to the .dll file have been described in the PlayerLookController.cs file. To find them, you can search for the comments. All the changes were specifically made in the InitializeTraitLook method.
+## The PlayerLookController.cs file contains the changed method. All changes have been described with comments
