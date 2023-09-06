@@ -14,3 +14,5 @@ I am happy to present to you, the Arsenal mod
 2. Backup your "Assembly-CSharp.dll" file located in "GamePath/Rogue Legacy 2_Data/Managed".
 3. Replace the file with the modded one.
 4. Have fun!
+
+Parts of files with modified content can be found in the Explanations folder, with comments explaining some things
