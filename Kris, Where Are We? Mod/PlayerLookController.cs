@@ -4,41 +4,6 @@ using UnityEngine;
 
 public class PlayerLookController : LookController
 {
-	public void InitializeScale(CharacterData charData)
-	{
-		Vector3 storedBaseScale = new Vector3(1.4f, 1.4f, 1f);
-		if (this.m_useCurrentScaleAsBase)
-		{
-			storedBaseScale = this.m_storedBaseScale;
-		}
-		if (!this.m_ignoreScaleTraits)
-		{
-			if (charData.TraitOne == TraitType.YouAreLarge || charData.TraitTwo == TraitType.YouAreLarge)
-			{
-				storedBaseScale.x *= 1.5f;
-				storedBaseScale.y *= 1.5f;
-			}
-			else if (charData.TraitOne == TraitType.YouAreSmall || charData.TraitTwo == TraitType.YouAreSmall)
-			{
-				storedBaseScale.x *= 0.55f;
-				storedBaseScale.y *= 0.55f;
-			}
-		}
-		if (this.m_clampPlayerScale)
-		{
-			storedBaseScale.x = Mathf.Clamp(storedBaseScale.x, 0.77f, 2.1f);
-			storedBaseScale.y = Mathf.Clamp(storedBaseScale.y, 0.77f, 2.1f);
-		}
-		base.transform.localScale = storedBaseScale;
-	}
-
-	private void SetMainColor(SkinnedMeshRenderer renderer, Color color)
-	{
-		renderer.GetPropertyBlock(base.PropertyBlock);
-		base.PropertyBlock.SetColor(ShaderID_RL._MainColor, color);
-		renderer.SetPropertyBlock(base.PropertyBlock);
-	}
-
 	public void InitializeTraitLook(CharacterData charData)
 	{
 		base.Animator.SetFloat("BoneStructureType", 0f);
