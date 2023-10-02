@@ -860,7 +860,7 @@ LOC_ID_ABILITY_TITLE_ShotgunWeapon_1	Blunderbuss
 LOC_ID_ABILITY_DESCRIPTION_ShotgunWeapon_1	<color=#DD5F03>Fabled Weapon</color></LB> <color=red><b>Massive recoil and always fires 2 shots.  Cannot cancel.</b></color></LB> <color=blue><b>Can be aimed. Press [Interact] to Reload.</b></color></LB> <color=blue><b>Last shot <color=purple>Skill Crits</color>.</b></color>	
 LOC_ID_ABILITY_CONTROLS_ShotgunWeapon_1		
 LOC_ID_ABILITY_TITLE_UmbrellaGroundWeapon_1	Kasa Obama	
-LOC_ID_ABILITY_DESCRIPTION_UmbrellaGroundWeapon_1	<color=#DD5F03>Fabled Weapon</color></LB><LB><color=red><b>No mortal can handle this weapon</b></color>
+LOC_ID_ABILITY_DESCRIPTION_UmbrellaGroundWeapon_1	<color=#DD5F03>Fabled Weapon</color></LB><color=red><b>No mortal can handle this weapon</b></color>
 LOC_ID_ABILITY_CONTROLS_UmbrellaGroundWeapon_1		
 LOC_ID_ABILITY_TITLE_TonfaWeapon_1	Dragon Fangs	
 LOC_ID_ABILITY_DESCRIPTION_TonfaWeapon_1	<color=#DD5F03>Fabled Weapon</color></LB> <color=blue><b>Attacks multiple times, applying <color=purple>Poison</color> with each strike.</b></color></LB> <color=blue><b>Last strike deals bonus damage, reduces cooldowns, applies <color=purple>Burn</color>, and <color=purple>Skill Crits</color>.</b></color>  	
