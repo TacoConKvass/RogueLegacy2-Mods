@@ -1,34 +1,30 @@
 public static void GenerateClass(ClassType classType, CharacterData charDataToMod)
 {
-    //Run normal logic, but instead of using Gets for every ability type, use for GetAvailableWeapons from Contrarian (all weapons unlocked)
-	charDataToMod.ClassType = classType;
-	AbilityType[] availableWeapons = CharacterCreator.GetAvailableWeapons(classType);
-	AbilityType abilityType = (availableWeapons.Length != 0) ? availableWeapons[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomWeapon", 0, availableWeapons.Length)] : AbilityType.None;
-	charDataToMod.Weapon = abilityType;
-	AbilityType[] availableSpells = CharacterCreator.GetAvailableWeapons(classType);
-	AbilityType abilityType2 = (availableSpells.Length != 0) ? availableSpells[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomSpell", 0, availableSpells.Length)] : AbilityType.None;
-	int num = 0;
-	while (abilityType2 != AbilityType.None && abilityType2 == abilityType && num < 50)
-	{
-		num++;
-		abilityType2 = availableSpells[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomSpell", 0, availableSpells.Length)];
-	}
-	if (num >= 50)
-	{
-		Debug.LogWarning("<color=yellow>Could not find non-duplicate spell in CharacterCreator.</color>");
-	}
-	charDataToMod.Spell = abilityType2;
-	AbilityType[] availableTalents = CharacterCreator.GetAvailableWeapons(classType);
-	AbilityType abilityType3 = (availableTalents.Length != 0) ? availableTalents[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomTalent", 0, availableTalents.Length)] : AbilityType.None;
-	num = 0;
-	while (abilityType3 != AbilityType.None && (abilityType3 == abilityType || abilityType3 == abilityType2) && num < 50)
-	{
-		num++;
-		abilityType3 = availableTalents[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomTalent", 0, availableTalents.Length)];
-	}
-	if (num >= 50)
-	{
-    	Debug.LogWarning("<color=yellow>Could not find non-duplicate talent in CharacterCreator.</color>");
-    }
-	charDataToMod.Talent = abilityType3;
+    //Run normal logic
+	CharacterCreator.RerollArsenal(charDataToMod);
+}
+
+public static void ApplyRandomizeKitTrait(CharacterData charData, bool randomizeSpell, bool excludeCurrentAbilities, bool useLineageSeed)
+{
+	//Run normal logic
+	CharacterCreator.RerollArsenal(charData);
+}
+
+public static void RerollArsenal(CharacterData charData)
+{
+	AbilityType[] availableWeapons = CharacterCreator.GetAvailableWeapons(ClassType.CURIO_SHOPPE_CLASS);
+	availableWeapons.Add(AbilityType.KunaiWeapon);
+	availableWeapons.Add(AbilityType.KiStrikeTalent);
+
+	AbilityType[] array = availableWeapons;
+	AbilityType weaponRoll = (array.Length != 0) ? array[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomWeapon", 0, array.Length)] : AbilityType.None;
+	charData.Weapon = weaponRoll;
+
+	AbilityType[] array2 = availableWeapons;
+	AbilityType spellRoll = (array2.Length != 0) ? array2[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomSpell", 0, array2.Length)] : AbilityType.None;
+	charData.Spell = spellRoll;
+
+	AbilityType[] array3 = availableWeapons;
+	AbilityType talentRoll = (array3.Length != 0) ? array3[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomTalent", 0, array3.Length)] : AbilityType.None;
+    charData.Talent = talentRoll;
 }
