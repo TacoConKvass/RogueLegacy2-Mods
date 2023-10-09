@@ -2,15 +2,6 @@ public class Shotgun_Ability : AimedAbility_RL, IAttack, IAbility
 {
     public override void Initialize(CastAbility_RL abilityController, CastAbilityType castAbilityType)
 	{
-		base.Initialize(abilityController, castAbilityType);
-		if (this.CanManuallyReload)
-		{
-			this.m_reloadAbility = AbilityLibrary.GetAbility(AbilityType.ShotgunReloadTalent);
-			this.m_reloadAbility = UnityEngine.Object.Instantiate<BaseAbility_RL>(this.m_reloadAbility);
-			this.m_reloadAbility.transform.SetParent(base.transform);
-			this.m_reloadAbility.Initialize(abilityController, castAbilityType);
-		}
-		this.m_gravityReductionModWhenAiming = this.GravityReduction;
 
         //I didn't want to do it this way, but I don't remember how I did it last time
 		this.frameTimer = 0;
@@ -36,5 +27,6 @@ public class Shotgun_Ability : AimedAbility_RL, IAttack, IAbility
 		}
 	}
 
+	// Just a class member, outside any method, but inside the class
     private int frameTimer;
 }

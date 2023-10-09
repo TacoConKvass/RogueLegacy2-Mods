@@ -21,3 +21,6 @@ v 1.0
 v 1.1
 - Transmogrifier and the Contrarian trait now get affected by the mod
 - Slight code change
+
+v 1.2
+- Fix Kinetic Revolver not reloading while not being in the Weapon ability slot
