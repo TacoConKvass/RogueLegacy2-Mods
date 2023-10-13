@@ -10,8 +10,6 @@ public static void ArchmageRoll(CharacterData charData)
 
 		charData.Spell = ((spells_available.Length != 0) ? spells_available[RNGManager.GetRandomNumber(RngID.Lineage, "GetRandomSpells", 0, spells_available.Length)] : AbilityType.None);
 		spells_available.Remove(charData.Spell);
-
-        charData.TraitTwo = TraitType.BonusMagicStrength; // Give the character Crippling Intellect
 }
 
 public static void GenerateRandomLook(CharacterData charData)
